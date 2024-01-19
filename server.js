@@ -4,11 +4,18 @@ const express = require("express")
 const Question = require('./models/question')
 const APIKEY = require('./models/apikey')
 const uuid = require('uuid')
+const cors = require('cors')
 
 const app = express()
 const PORT = process.env.PORT 
 
 app.set('view engine', 'ejs')
+
+app.use(
+    cors({
+        origin: "*",
+    })
+)
 
 app.use(express.urlencoded({extended:true}))
 

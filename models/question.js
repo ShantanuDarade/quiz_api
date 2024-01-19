@@ -21,7 +21,8 @@ const questionSchema = new mongoose.Schema({
         type:String
     },
     answer: {
-        type:Number
+        type:Number,
+        enum: [1, 2, 3, 4]
     }
 })
 
